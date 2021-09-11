@@ -1,0 +1,254 @@
+:root {
+    --blue: rgb(26, 70, 130);
+    --main: rgb(31, 42, 72);
+    --button: rgb(0, 122, 248);
+    --background:  rgb(20, 28, 47);
+    --fontColor: rgb(245, 248, 255);
+}
+
+.theme-light {
+    --background: rgb(245, 248, 255);
+    --button: rgb(0, 122, 248);
+    --fontColor: rgb(31, 42, 72);
+    --main: rgb(255, 255, 255);
+    --inputColor: rgb(129, 136, 142);
+}
+
+.theme-dark {
+    --main: rgb(31, 42, 72);
+    --button: rgb(0, 122, 248);
+    --background:  rgb(20, 28, 47);
+    --fontColor: rgb(245, 248, 255);
+    --inputColor: rgb(202, 210, 229);
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--fontColor);
+}
+
+div, span, button, h3, p, input, input::placeholder {
+    font-family: 'Space Mono', monospace;
+}
+
+input, button {
+    border: none;
+    outline: none;
+}
+
+span, a {
+    font-size: 1.3em;
+}
+
+img {
+    height: auto;
+    width: 70%;
+    border-radius: 50%;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-wrapper {
+    max-width: 720px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mode-switch button {
+    text-transform: uppercase;
+    color: var(--fontColor);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+#mode-switch button i {
+    pointer-events: none;
+}
+
+main {
+    background-color: var(--main);
+    border-radius: 10px;
+    padding: 2rem;
+    display: grid;
+    grid-template-areas: "side-bar name joined"
+                         "side-bar main main"
+                         "side-bar links links";
+    grid-template-columns: 150px 1fr;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--main);
+    border-radius: 10px;
+    height: 35px;
+    margin: 30px 0 20px 0;
+}
+
+nav > i {
+    font-size: 24px;
+    color: rgb(42, 93, 158);
+    padding: 0 5px;
+}
+
+nav > input {
+    flex-grow: 1;
+    background-color: transparent;
+    color: var(--inputColor);
+    font-size: 16px;
+}
+
+nav > input::placeholder{
+    color: var(--inputColor);
+}
+
+nav > button {
+    background-color: var(--button);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s background-color ease-in-out;
+    font-weight: bold;
+}
+
+nav > button:hover {
+    background-color: var(--blue);
+}
+
+nav > button:active {
+    background-color: rgb(22, 62, 114);
+}
+
+#statistics {
+    margin-top: 30px;
+    background-color: var(--background);
+    padding: 20px 40px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+#statistics > div span {
+    display: block;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#statistics h5 {
+    font-weight: normal;
+    margin: 0;
+}
+
+.following {
+    padding-right: 50px;
+}
+
+#repos-count, #followers-count, #following-count {
+    font-weight: bold;
+}
+
+#side-bar {
+    grid-area: side-bar;
+}
+
+#name {
+    grid-area: name;
+}
+
+#joined {
+    grid-area: joined;
+}
+
+#main {
+    grid-area: main;
+}
+
+#links {
+    grid-area: links;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 30px;
+}
+
+#links > div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+@media (max-width: 720px) {
+    .flex-wrapper {
+        max-width: 480px;
+    }
+    main {
+        grid-template-areas: "side-bar name"
+                            "side-bar joined"
+                             "main main"
+                             "links links";
+    }
+    img {
+        width: 50%;
+    }
+    span, a {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .flex-wrapper {
+        max-width: 360px;
+    }
+    header {
+        margin: 0 5px;
+    }
+    span, a {
+        font-size: 1em;
+    }
+    nav > input {
+        overflow: hidden;
+        padding-right: 10px;
+        font-size: 14px;
+    }
+
+    #statistics {
+        padding: 10px 20px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    #statistics > div span {
+        max-width: 100%;
+    }
+
+    .following {
+        padding-right: 0;
+    }
+
+   #links {
+       display: block;
+   }
+}

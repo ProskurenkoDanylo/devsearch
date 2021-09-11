@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet"
+          href="css/main.css">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet"
+          href="css/fontello.css">
+    <title>GitHub user search app</title>
+</head>
+<body>
+    <div class="container">
+        <div class="flex-wrapper">
+            <header>
+                <div id="logo"><span>devfinder</span></div>
+                <div id="mode-switch"><button type="button" id="toggle-theme">dark <i class="icon-moon-inv"></i></button></div>
+            </header>
+            <nav>
+                <i class="icon-search"></i>
+                <input type="text" id="username" placeholder="Search GitHub username..." />
+                <button type="button" id="findUserButton">Search</button>
+            </nav>
+            <main>
+                <div id="side-bar"><img src="images/default.png" alt="user photo" id="user-photo"></div>
+                <div id="name"><span id="user-name">No user found</span></div>
+                <div id="joined"></div>
+                <div id="main">
+                    <p id="profile">No bio.</p>
+                    <div id="statistics">
+                        <div class="repos">
+                            <h5>Repos</h5>
+                            <span id="repos-count">0</span>
+                        </div>
+                        <div class="followers">
+                            <h5>Followers</h5>
+                            <span id="followers-count">0</span>
+                        </div>
+                        <div class="following">
+                            <h5>Following</h5>
+                            <span id="following-count">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="links">
+                    <div class="location"><i class="icon-location"></i> <span  id="user-location">No location</span></div>
+                    <div class="twitter"><i class="icon-twitter"></i> <a id="user-twitter">No twitter</a></div>
+                    <div class="git-link"><i class="icon-link"></i> <a id="user-blog">No blog</a></div>
+                    <div class="git-house"><i class="icon-building"></i> <span id="user-company">No company</span></div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="../src/main.js"></script>
+</body>
+</html>
