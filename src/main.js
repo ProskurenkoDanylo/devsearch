@@ -29,7 +29,7 @@ async function fetchUser() {
 const displayUserData = () => {
   const data = fetchUser();
   data.then((body) => {
-    document.getElementById("user-photo").src = body["avatar_url"] || "images/default.png";
+    document.getElementById("user-photo").src = body["avatar_url"] || "public/images/default.png";
     setTextToElement(
         "user-name",
         body["name"] || 'No name'
