@@ -32,7 +32,7 @@ const displayUserData = () => {
     document.getElementById("user-photo").src = body["avatar_url"] || "public/images/default.png";
     setTextToElement(
         "user-name",
-        body["name"] || 'No name'
+        body["name"] || 'No user found'
     );
     setTextToElement(
         "joined",
