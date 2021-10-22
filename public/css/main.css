@@ -225,9 +225,6 @@ nav > button:active {
     header {
         margin: 0 5px;
     }
-    span, a {
-        font-size: 1em;
-    }
     nav > input {
         overflow: hidden;
         padding-right: 10px;
